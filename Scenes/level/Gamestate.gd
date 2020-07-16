@@ -21,9 +21,12 @@ func next_level():
 	else: 
 		get_tree().change_scene_to(get_level(next_index))
 
-func end_game():
-	get_tree().quit()
-
 func check_if_level_exist(var index: int):
 	var size = _order.size()
 	return index >= size
+
+func end_game():
+	get_tree().quit()
+
+func reset_level():
+	get_tree().reload_current_scene()

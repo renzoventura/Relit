@@ -68,11 +68,12 @@ func update_camera_texture():
 		$Camera2D/ParallaxBackground/ParallaxLayer/TextureRect.texture = load("res://assets/white_background.png")
 
 func _on_Area2D_body_entered(body):
-	#print("something entered cant toggle")
 	if body.name != "Player":
 		can_toggle = false
 
 func _on_Area2D_body_exited(body):
-	#print("something exited we can toggle")
 	if body.name != "Player":
 		can_toggle = true
+
+func hurt():
+	get_tree().call_group("Gamestate", "reset_level")
