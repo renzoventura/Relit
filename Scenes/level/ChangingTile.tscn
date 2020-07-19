@@ -4,12 +4,13 @@
 [ext_resource path="res://assets/white_tile.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 30.0611, 30.1457 )
+extents = Vector2( 30.6901, 31.0302 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 30.2047, 30.228 )
 
 [node name="ChangingTile" type="Node2D"]
+position = Vector2( 0, -0.358475 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true

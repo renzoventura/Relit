@@ -12,7 +12,6 @@ onready var static_body = $Sprite/StaticBody2D;
 func _ready():
 	if(can_change):
 		change_texture()
-	print("timer start")
 	timer.start()
 
 func _on_Timer_timeout():
@@ -39,14 +38,11 @@ func change_mask_collision():
 
 
 func _on_Area2D_body_entered(body):
-	print("entered")
-	print(body.name)
 	if(body.name == "Player"):
 		can_change = false
 
 
 
 func _on_Area2D_body_exited(body):
-	print("exit")
 	if(body.name == "Player"):
 		can_change = true
