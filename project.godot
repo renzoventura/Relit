@@ -53,6 +53,7 @@ toggle_form={
 2d_physics/layer_2="Light"
 2d_physics/layer_3="Dark"
 2d_physics/layer_4="Tile"
+2d_physics/layer_5="Hazards"
 
 [rendering]
 
