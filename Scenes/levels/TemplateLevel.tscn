@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/player/lighttilemap.tres" type="TileSet" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Scenes/environment/Portal.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/level/Gamestate.gd" type="Script" id=6]
 [ext_resource path="res://Scenes/Hazards/DeathDetector.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/level/MovingTile.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/level/ChangingTile.tscn" type="PackedScene" id=9]
 
 [node name="TemplateLevel" type="Node2D" groups=[
 "Gamestate",
@@ -14,12 +16,13 @@
 script = ExtResource( 6 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 56, 540 )
+position = Vector2( 57.948, 501.04 )
 z_index = 5
 collision_mask = 2
 
 [node name="LightMap" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
+cell_size = Vector2( 60, 60 )
 collision_layer = 2
 collision_mask = 0
 format = 1
@@ -27,6 +30,7 @@ tile_data = PoolIntArray( 524293, 0, 0 )
 
 [node name="DarkMap" type="TileMap" parent="."]
 tile_set = ExtResource( 3 )
+cell_size = Vector2( 60, 60 )
 collision_layer = 4
 collision_mask = 0
 format = 1
@@ -34,6 +38,7 @@ tile_data = PoolIntArray( 524296, 0, 0 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 4 )
+cell_size = Vector2( 60, 60 )
 collision_layer = 8
 format = 1
 tile_data = PoolIntArray( -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, -65528, 0, 0, -65527, 0, 0, -65526, 0, 0, -65525, 0, 0, -65524, 0, 0, -65523, 0, 0, -65522, 0, 0, -65521, 0, 0, -65520, 0, 0, 65535, 0, 0, 16, 0, 0, 131071, 0, 0, 65552, 0, 0, 196607, 0, 0, 131088, 0, 0, 262143, 0, 0, 196624, 0, 0, 327679, 0, 0, 262160, 0, 0, 393215, 0, 0, 327696, 0, 0, 458751, 0, 0, 393232, 0, 0, 524287, 0, 0, 458768, 0, 0, 589823, 0, 0, 524304, 0, 0, 655359, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0, 589840, 0, 0 )
@@ -41,9 +46,19 @@ tile_data = PoolIntArray( -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -6
 [node name="Hazards" type="Node" parent="."]
 
 [node name="DeathDetector" parent="Hazards" instance=ExtResource( 7 )]
-position = Vector2( 763.835, 622.319 )
+position = Vector2( -19.4802, 668.169 )
 
 [node name="Portals" type="Node" parent="."]
 
 [node name="Portal" parent="Portals" instance=ExtResource( 5 )]
-position = Vector2( 954, 536 )
+position = Vector2( 913.092, 498.988 )
+
+[node name="ChangingTiles" type="Node" parent="."]
+
+[node name="ChangingTile" parent="ChangingTiles" instance=ExtResource( 9 )]
+position = Vector2( 205.77, 506.301 )
+
+[node name="MovingTiles" type="Node" parent="."]
+
+[node name="MovingTile" parent="MovingTiles" instance=ExtResource( 8 )]
+position = Vector2( 311.989, 378.115 )

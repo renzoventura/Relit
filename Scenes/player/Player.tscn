@@ -11,9 +11,6 @@ extents = Vector2( 31.5573, 31.3239 )
 position = Vector2( 0, -0.27739 )
 collision_mask = 0
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Sprite" type="Sprite" parent="."]
 modulate = Color( 0.431373, 0.431373, 0.431373, 1 )
@@ -51,5 +48,13 @@ collision_mask = 7
 visible = false
 position = Vector2( -4.76837e-06, -0.277388 )
 shape = SubResource( 1 )
+
+[node name="Camera2D2" type="Camera2D" parent="."]
+position = Vector2( 0, -97.9469 )
+current = true
+zoom = Vector2( 1.5, 1.5 )
+limit_left = 0
+smoothing_enabled = true
+offset_v = -1.0
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
