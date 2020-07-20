@@ -18,6 +18,7 @@ polygon = PoolVector2Array( -30.1918, -23.831, -28.3585, -27.636, -25.5879, -29.
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2( 2, 2 )
+smoothing_speed = 1.0
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Camera2D"]
 scroll_ignore_camera_zoom = true
@@ -44,12 +45,12 @@ scale = Vector2( 0.987549, 0.98448 )
 polygon = PoolVector2Array( -30.1918, -23.831, -28.3585, -27.636, -25.5879, -29.9695, 25.2256, -29.6285, 27.8013, -27.3919, 29.7443, -23.6605, 30, 24.6806, 28.1676, 27.9133, 25.3961, 29.9665, -24.3943, 30.3928, -27.8701, 28.1575, -30.1918, 24.3395 )
 
 [node name="Camera2D2" type="Camera2D" parent="."]
-visible = false
-position = Vector2( 0, -97.9469 )
+position = Vector2( 0, -50 )
 current = true
 zoom = Vector2( 1.5, 1.5 )
 limit_left = 0
 smoothing_enabled = true
+smoothing_speed = 6.0
 offset_v = -1.0
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]

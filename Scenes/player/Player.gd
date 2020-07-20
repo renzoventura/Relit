@@ -1,13 +1,14 @@
 extends KinematicBody2D
 
-const SPEED = 600;
-const GRAVITY = 150;
+const SPEED = 700;
+const GRAVITY = 180;
 const UP = Vector2(0,-1)
 const JUMP_SPEED = 2000
 const JUMP_PAD_SPEED = 6000
 const WORLD_LIMIT = 4000
 const dark_modulate = Color("6e6e6e")
 const light_modulate = Color("ffffff")
+const MAX_FALL_SPEED = 1900
 
 var motion = Vector2(0,0)
 var can_toggle = true
@@ -36,7 +37,8 @@ func apply_gravity():
 	elif is_on_ceiling():
 		motion.y = 1
 	else:
-		motion.y += GRAVITY
+		if(motion.y < MAX_FALL_SPEED):
+			motion.y += GRAVITY
 		
 func jump():
 	if Input.is_action_pressed("jump") and is_on_floor():
