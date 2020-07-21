@@ -64,11 +64,12 @@ func update_texture():
 		$Sprite.modulate = light_modulate
 
 func update_camera_texture():
-	if (get_collision_mask_bit(1) and !get_collision_mask_bit(2)):
-		$Camera2D/ParallaxBackground/ParallaxLayer/TextureRect.texture = load("res://assets/black_background.png")
-	else:
-		$Camera2D/ParallaxBackground/ParallaxLayer/TextureRect.texture = load("res://assets/white_background.png")
-
+#	if (get_collision_mask_bit(1) and !get_collision_mask_bit(2)):
+#		$Camera2D/ParallaxBackground/ParallaxLayer/TextureRect.texture = load("res://assets/black_background.png")
+#	else:
+#		$Camera2D/ParallaxBackground/ParallaxLayer/TextureRect.texture = load("res://assets/white_background.png")
+	pass
+	
 func _on_Area2D_body_entered(body):
 	if body.name != "Player":
 		can_toggle = false
