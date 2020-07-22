@@ -1,26 +1,34 @@
 extends KinematicBody2D
 
 const SPEED = 700;
-const GRAVITY = 180;
+const GRAVITY = 100;
 const UP = Vector2(0,-1)
-const JUMP_SPEED = 2000
+const JUMP_SPEED = 1500
 const JUMP_PAD_SPEED = 6000
 const WORLD_LIMIT = 4000
-const dark_modulate = Color("6e6e6e")
-const light_modulate = Color("ffffff")
 const MAX_FALL_SPEED = 1900
+
+export var is_light = true
 
 var motion = Vector2(0,0)
 var can_toggle = true
+var is_alive = true
+
+signal animate
+signal death_animate
 
 func _ready():
+	is_alive = true
+	is_light = true
 	can_toggle = true
 
 func _process(delta):
 	apply_gravity()
-	move()
-	jump()
-	toggle_form()
+	if is_alive:
+		move()
+		jump()
+		toggle_form()
+	animate()
 	move_and_slide(motion,UP)
 
 func move():
@@ -46,30 +54,17 @@ func jump():
 
 func toggle_form():
 	if Input.is_action_just_pressed("toggle_form") and can_toggle:
-		toggle_mask_one()
-		toggle_mask_two()
-		update_texture()
-		update_camera_texture()
-	
-func toggle_mask_one():
-	set_collision_mask_bit(1, !get_collision_mask_bit(1))
+		is_light = !is_light
+		update_form()
 
-func toggle_mask_two():
-	set_collision_mask_bit(2, !get_collision_mask_bit(2))
+func update_form():
+	if is_light:
+		set_collision_mask_bit(1, true)
+		set_collision_mask_bit(2, false)
+	else:
+		set_collision_mask_bit(1, false)
+		set_collision_mask_bit(2, true)
 
-func update_texture():
-	if (get_collision_mask_bit(1)):
-		$Sprite.modulate = dark_modulate
-	elif (get_collision_mask_bit(2)):
-		$Sprite.modulate = light_modulate
-
-func update_camera_texture():
-#	if (get_collision_mask_bit(1) and !get_collision_mask_bit(2)):
-#		$Camera2D/ParallaxBackground/ParallaxLayer/TextureRect.texture = load("res://assets/black_background.png")
-#	else:
-#		$Camera2D/ParallaxBackground/ParallaxLayer/TextureRect.texture = load("res://assets/white_background.png")
-	pass
-	
 func _on_Area2D_body_entered(body):
 	if body.name != "Player":
 		can_toggle = false
@@ -79,4 +74,19 @@ func _on_Area2D_body_exited(body):
 		can_toggle = true
 
 func hurt():
+	is_alive = false
+	var t = Timer.new()
+	t.set_wait_time(2)
+	t.set_one_shot(true)
+	self.add_child(t)
+	t.start()
+	yield(t, "timeout")
 	get_tree().call_group("Gamestate", "reset_level")
+	t.queue_free()
+		
+func animate():
+	if is_alive:
+		emit_signal("animate", motion, is_light)
+	else: 
+		emit_signal("death_animate")
+

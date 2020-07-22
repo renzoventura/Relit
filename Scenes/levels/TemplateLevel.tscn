@@ -24,7 +24,7 @@ cell_size = Vector2( 60, 60 )
 collision_layer = 2
 collision_mask = 0
 format = 1
-tile_data = PoolIntArray( 524293, 0, 0 )
+tile_data = PoolIntArray( 65537, 0, 0 )
 
 [node name="DarkMap" type="TileMap" parent="."]
 tile_set = ExtResource( 3 )
@@ -32,7 +32,7 @@ cell_size = Vector2( 60, 60 )
 collision_layer = 4
 collision_mask = 0
 format = 1
-tile_data = PoolIntArray( 524296, 0, 0 )
+tile_data = PoolIntArray( 65539, 0, 0 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 4 )
@@ -44,7 +44,7 @@ tile_data = PoolIntArray( -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -6
 [node name="Hazards" type="Node" parent="."]
 
 [node name="DeathDetector" parent="Hazards" instance=ExtResource( 7 )]
-position = Vector2( -19.4802, 668.169 )
+position = Vector2( 717.839, 597.43 )
 
 [node name="Portals" type="Node" parent="."]
 
@@ -54,3 +54,5 @@ position = Vector2( 913.092, 498.988 )
 [node name="ChangingTiles" type="Node" parent="."]
 
 [node name="MovingTiles" type="Node" parent="."]
+
+[node name="Spikes" type="Node" parent="."]
