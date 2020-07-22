@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://assets/player/Light idle right-3.png.png" type="Texture" id=1]
 [ext_resource path="res://assets/player/Light idle right-1.png.png" type="Texture" id=2]
@@ -11,17 +11,32 @@
 [ext_resource path="res://assets/player/Dark idle right-3.png.png" type="Texture" id=9]
 [ext_resource path="res://assets/player/Dark jump right.png" type="Texture" id=10]
 [ext_resource path="res://assets/player/Dark idle right-2.png.png" type="Texture" id=11]
+[ext_resource path="res://assets/player/Dark moving right-1.png.png" type="Texture" id=12]
+[ext_resource path="res://assets/player/Light moving right-1.png.png" type="Texture" id=13]
+[ext_resource path="res://assets/player/Light moving right-2.png.png" type="Texture" id=14]
+[ext_resource path="res://assets/player/Dark moving right-2.png.png" type="Texture" id=15]
+[ext_resource path="res://assets/player/Hurt right.png" type="Texture" id=16]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 12 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "dark_walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ) ],
+"loop": true,
+"name": "dead",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 2 ), ExtResource( 5 ), ExtResource( 1 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "light_idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ) ],
+"frames": [ ExtResource( 7 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 8 ) ],
 "loop": true,
-"name": "light_jump",
+"name": "dark_idle",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 10 ) ],
@@ -29,14 +44,19 @@ animations = [ {
 "name": "dark_jump",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 7 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 8 ) ],
+"frames": [ ExtResource( 4 ) ],
 "loop": true,
-"name": "dark_idle",
+"name": "light_jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "light_walk",
 "speed": 5.0
 } ]
 
 [node name="PlayerAnimation" type="AnimatedSprite"]
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 1 )
-animation = "dark_jump"
+animation = "dead"
 script = ExtResource( 6 )
