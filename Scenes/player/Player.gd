@@ -12,18 +12,22 @@ export var is_light = true
 
 var motion = Vector2(0,0)
 var can_toggle = true
+var is_alive = true
 
 signal animate
+signal death_animate
 
 func _ready():
+	is_alive = true
 	is_light = true
 	can_toggle = true
 
 func _process(delta):
 	apply_gravity()
-	move()
-	jump()
-	toggle_form()
+	if is_alive:
+		move()
+		jump()
+		toggle_form()
 	animate()
 	move_and_slide(motion,UP)
 
@@ -70,7 +74,19 @@ func _on_Area2D_body_exited(body):
 		can_toggle = true
 
 func hurt():
+	is_alive = false
+	var t = Timer.new()
+	t.set_wait_time(2)
+	t.set_one_shot(true)
+	self.add_child(t)
+	t.start()
+	yield(t, "timeout")
 	get_tree().call_group("Gamestate", "reset_level")
-	
+	t.queue_free()
+		
 func animate():
-	emit_signal("animate", motion, is_light)
+	if is_alive:
+		emit_signal("animate", motion, is_light)
+	else: 
+		emit_signal("death_animate")
+

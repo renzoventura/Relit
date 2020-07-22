@@ -29,3 +29,7 @@ func _on_Player_animate(motion, is_light):
 			play("dark_walk")
 
 
+
+
+func _on_Player_death_animate():
+	play("dead")
