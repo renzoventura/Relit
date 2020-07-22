@@ -26,5 +26,5 @@ func _on_StartGame_gui_input(event):
 func _on_Credits_gui_input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == BUTTON_LEFT and event.pressed:
-			print("Show Credits")
+				get_tree().change_scene_to(load(str("res://Scenes/Menu/Credits.tscn")))
 
