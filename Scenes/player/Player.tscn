@@ -33,7 +33,6 @@ shape = SubResource( 1 )
 
 [node name="PlayerAnimation" parent="." instance=ExtResource( 1 )]
 animation = "dark_idle"
-frame = 2
 playing = true
 [connection signal="animate" from="." to="PlayerAnimation" method="_on_Player_animate"]
 [connection signal="death_animate" from="." to="PlayerAnimation" method="_on_Player_death_animate"]

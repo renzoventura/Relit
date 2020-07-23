@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Themes/themes.theme" type="Theme" id=1]
+[ext_resource path="res://Scenes/Menu/PauseScreen.gd" type="Script" id=2]
+
+[node name="PauseScreen" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0431373, 0.0352941, 0.0352941, 0.34902 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/CenterContainer"]
+margin_left = 423.0
+margin_top = 247.0
+margin_right = 601.0
+margin_bottom = 353.0
+custom_constants/separation = 40
+
+[node name="Resume" type="Label" parent="ColorRect/CenterContainer/VBoxContainer"]
+margin_right = 178.0
+margin_bottom = 33.0
+mouse_filter = 1
+text = "RESUME"
+align = 1
+
+[node name="Quit" type="Label" parent="ColorRect/CenterContainer/VBoxContainer"]
+margin_top = 73.0
+margin_right = 178.0
+margin_bottom = 106.0
+mouse_filter = 1
+text = "QUIT"
+align = 1
+[connection signal="gui_input" from="ColorRect/CenterContainer/VBoxContainer/Resume" to="." method="_on_Resume_gui_input"]
+[connection signal="mouse_entered" from="ColorRect/CenterContainer/VBoxContainer/Resume" to="." method="_on_Resume_mouse_entered"]
+[connection signal="mouse_exited" from="ColorRect/CenterContainer/VBoxContainer/Resume" to="." method="_on_Resume_mouse_exited"]
+[connection signal="gui_input" from="ColorRect/CenterContainer/VBoxContainer/Quit" to="." method="_on_Quit_gui_input"]
+[connection signal="mouse_entered" from="ColorRect/CenterContainer/VBoxContainer/Quit" to="." method="_on_Quit_mouse_entered"]
+[connection signal="mouse_exited" from="ColorRect/CenterContainer/VBoxContainer/Quit" to="." method="_on_Quit_mouse_exited"]

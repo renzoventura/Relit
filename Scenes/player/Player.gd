@@ -89,4 +89,3 @@ func animate():
 		emit_signal("animate", motion, is_light)
 	else: 
 		emit_signal("death_animate")
-
