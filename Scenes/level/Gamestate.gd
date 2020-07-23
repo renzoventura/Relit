@@ -3,7 +3,7 @@ extends Node2D
 const _order = [
 	"Level0",
 	"Level1",
-	"Level2",
+#	"Level2",
 ]
 
 static func get_level(var index: int):
@@ -28,7 +28,8 @@ func check_if_level_exist(var index: int):
 	return index >= size
 
 func end_game():
-	get_tree().quit()
+	get_tree().change_scene_to(load(str("res://Scenes/Menu/ThankYou.tscn")))
+
 
 func reset_level():
 	get_tree().reload_current_scene()

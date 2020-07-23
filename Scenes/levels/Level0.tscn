@@ -39,7 +39,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="JumpTutorial" type="Label" parent="." index="8"]
+[node name="PauseTutorial" type="Label" parent="." index="8"]
+margin_left = 1971.0
+margin_top = 610.0
+margin_right = 2838.0
+margin_bottom = 715.0
+theme = ExtResource( 3 )
+text = "Press ESC to pause the game"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="JumpTutorial" type="Label" parent="." index="9"]
 margin_left = 254.0
 margin_top = 749.0
 margin_right = 884.0
@@ -52,7 +64,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="FormTutorial" type="Label" parent="." index="9"]
+[node name="FormTutorial" type="Label" parent="." index="10"]
 margin_left = 4290.0
 margin_top = 1104.0
 margin_right = 4993.0

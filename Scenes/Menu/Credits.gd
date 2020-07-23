@@ -5,7 +5,6 @@ const WHITE = Color(1,1,1)
 onready var back = $CenterContainer/VBoxContainer/VBoxContainer/Back
 
 func _on_Back_mouse_entered():
-	print("test")
 	back.add_color_override("font_color", BLACK)
 
 
