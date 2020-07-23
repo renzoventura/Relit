@@ -15,9 +15,3 @@ tile_data = PoolIntArray( -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -6
 
 [node name="DeathDetector" parent="Hazards" index="0"]
 position = Vector2( 139.129, 935.223 )
-
-[node name="ChangingTile" parent="ChangingTiles" index="0"]
-position = Vector2( -251.332, 785.836 )
-
-[node name="MovingTile" parent="MovingTiles" index="0"]
-position = Vector2( -162.693, 924.879 )

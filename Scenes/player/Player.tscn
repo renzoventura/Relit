@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/player/PlayerAnimation.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/player/Player.gd" type="Script" id=2]
+[ext_resource path="res://assets/sfx/jump.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/sfx/death.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/sfx/change_form.wav" type="AudioStream" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 33.0485, 31.9186 )
+extents = Vector2( 33.9951, 33.7873 )
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 0, -0.27739 )
@@ -33,8 +36,20 @@ shape = SubResource( 1 )
 
 [node name="PlayerAnimation" parent="." instance=ExtResource( 1 )]
 animation = "dark_idle"
-frame = 2
+frame = 1
 playing = true
+
+[node name="JumpSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -10.0
+
+[node name="HurtSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -5.0
+
+[node name="FormChange" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -10.0
 [connection signal="animate" from="." to="PlayerAnimation" method="_on_Player_animate"]
 [connection signal="death_animate" from="." to="PlayerAnimation" method="_on_Player_death_animate"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

@@ -17,6 +17,10 @@ var is_alive = true
 signal animate
 signal death_animate
 
+onready var jump_sfx = $JumpSFX
+onready var hurt_sfx = $HurtSFX
+onready var change_sfx = $FormChange
+
 func _ready():
 	is_alive = true
 	is_light = true
@@ -51,10 +55,12 @@ func apply_gravity():
 func jump():
 	if Input.is_action_pressed("jump") and is_on_floor():
 		motion.y -= JUMP_SPEED
+		jump_sfx.play()
 
 func toggle_form():
 	if Input.is_action_just_pressed("toggle_form") and can_toggle:
 		is_light = !is_light
+		change_sfx.play()
 		update_form()
 
 func update_form():
@@ -75,6 +81,7 @@ func _on_Area2D_body_exited(body):
 
 func hurt():
 	is_alive = false
+	hurt_sfx.play()
 	var t = Timer.new()
 	t.set_wait_time(2)
 	t.set_one_shot(true)
@@ -88,5 +95,8 @@ func animate():
 	if is_alive:
 		emit_signal("animate", motion, is_light)
 	else: 
+#		motion.x -= -motion.x * 2
+#		motion.y -= -motion.y * 2 
 		emit_signal("death_animate")
+	
 
