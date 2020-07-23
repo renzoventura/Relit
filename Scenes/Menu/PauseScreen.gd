@@ -10,6 +10,7 @@ func _input(event):
 	if event.is_action_pressed("pause"):
 		get_tree().paused = !get_tree().paused
 		visible = !visible
+		get_tree().call_group("Gamestate", "set_background_music", get_tree().paused)
 
 func _on_Resume_mouse_entered():
 	resume_label.add_color_override("font_color", BLACK)

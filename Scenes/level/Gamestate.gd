@@ -9,8 +9,10 @@ const _order = [
 static func get_level(var index: int):
 	return load(str("res://Scenes/levels/", _order[index], ".tscn"))
 	
+onready var backgroundMusic = $Music/AudioStreamPlayer
+
 func _ready():
-	pass # Replace with function body.
+	backgroundMusic.play()
 	
 func next_level():
 	var context = get_tree().get_current_scene().get_name()
@@ -30,3 +32,11 @@ func end_game():
 
 func reset_level():
 	get_tree().reload_current_scene()
+
+func set_background_music(paused):
+	if paused:
+		backgroundMusic.pitch_scale = 0.8
+	else:
+		backgroundMusic.pitch_scale = 1
+		
+
