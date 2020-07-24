@@ -6,6 +6,7 @@ export var is_neutral = true
 const dark_modulate = Color("6e6e6e")
 const light_modulate = Color("ffffff")
 const neutral_modulate = Color("FF0000")
+
 onready var sprite = $Sprite;
 onready var timer = $Timer;
 onready var static_body = $Sprite/StaticBody2D;
