@@ -36,7 +36,6 @@ shape = SubResource( 1 )
 
 [node name="PlayerAnimation" parent="." instance=ExtResource( 1 )]
 animation = "dark_idle"
-frame = 3
 playing = true
 
 [node name="JumpSFX" type="AudioStreamPlayer" parent="."]
