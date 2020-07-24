@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/Themes/themes.theme" type="Theme" id=1]
 [ext_resource path="res://Scenes/Themes/title.theme" type="Theme" id=2]
 [ext_resource path="res://Scenes/Menu/MainMenu.gd" type="Script" id=3]
 [ext_resource path="res://assets/sfx/menu_click.wav" type="AudioStream" id=4]
 [ext_resource path="res://assets/sfx/menu_hover.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/sfx/menu_music.ogg" type="AudioStream" id=6]
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
@@ -84,6 +85,10 @@ stream = ExtResource( 5 )
 
 [node name="Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -10.0
 [connection signal="gui_input" from="CenterContainer/Texts/Options/StartGame" to="." method="_on_StartGame_gui_input"]
 [connection signal="mouse_entered" from="CenterContainer/Texts/Options/StartGame" to="." method="_on_StartGame_mouse_entered"]
 [connection signal="mouse_exited" from="CenterContainer/Texts/Options/StartGame" to="." method="_on_StartGame_mouse_exited"]

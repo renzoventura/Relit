@@ -42,12 +42,12 @@ func set_background_music(paused):
 	else:
 		backgroundMusic.pitch_scale = 1
 		
-var starting_volume = -20
+var starting_volume = 0
 
 func play_music():
 	backgroundMusic.volume_db = starting_volume;
 	backgroundMusic.play();
-	fade_in_music(backgroundMusic)
+#	fade_in_music(backgroundMusic)
 	
 func fade_in_music(stream_player):
 	var transition_duration = 2

@@ -19,6 +19,8 @@ func _on_Credits_mouse_entered():
 func _on_Credits_mouse_exited():
 	$CenterContainer/Texts/Options/Credits.add_color_override("font_color", WHITE)
 
+func _ready():
+	$MenuMusic.play()
 
 func _on_StartGame_gui_input(event):
 	if event is InputEventMouseButton:
