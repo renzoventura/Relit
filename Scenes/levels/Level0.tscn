@@ -23,7 +23,7 @@ position = Vector2( 3945, 1951 )
 scale = Vector2( 100, 1 )
 
 [node name="Portal" parent="Portals" index="0"]
-position = Vector2( 7797, 1031 )
+position = Vector2( 7802.88, 1059.28 )
 
 [node name="MovementTutorial" type="Label" parent="." index="7"]
 margin_left = 151.0
@@ -77,14 +77,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Spikes" parent="Spikes" index="0" instance=ExtResource( 2 )]
-position = Vector2( 3859, 1294 )
+[node name="Spikes3" parent="Spikes" index="0" instance=ExtResource( 2 )]
+position = Vector2( 3926.39, 1294 )
 
-[node name="Spikes2" parent="Spikes" index="1" instance=ExtResource( 2 )]
-position = Vector2( 3892, 1294 )
+[node name="Spikes6" parent="Spikes" index="1" instance=ExtResource( 2 )]
+position = Vector2( 3856.97, 1294.78 )
 
-[node name="Spikes3" parent="Spikes" index="2" instance=ExtResource( 2 )]
-position = Vector2( 3926, 1294 )
+[node name="Spikes7" parent="Spikes" index="2" instance=ExtResource( 2 )]
+position = Vector2( 3890.51, 1294 )
 
 [node name="Spikes4" parent="Spikes" index="3" instance=ExtResource( 2 )]
 position = Vector2( 3963, 1294 )

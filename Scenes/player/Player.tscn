@@ -36,7 +36,7 @@ shape = SubResource( 1 )
 
 [node name="PlayerAnimation" parent="." instance=ExtResource( 1 )]
 animation = "dark_idle"
-frame = 2
+frame = 3
 playing = true
 
 [node name="JumpSFX" type="AudioStreamPlayer" parent="."]
@@ -45,11 +45,11 @@ volume_db = -10.0
 
 [node name="HurtSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
-volume_db = -5.0
+volume_db = -10.0
 
 [node name="FormChange" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
-volume_db = -10.0
+volume_db = -20.0
 [connection signal="animate" from="." to="PlayerAnimation" method="_on_Player_animate"]
 [connection signal="death_animate" from="." to="PlayerAnimation" method="_on_Player_death_animate"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

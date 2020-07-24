@@ -23,6 +23,7 @@ func _on_Resume_gui_input(event):
 		if event.button_index == BUTTON_LEFT and event.pressed:
 			visible = not visible
 			get_tree().paused = false
+			get_tree().call_group("Gamestate", "set_background_music", get_tree().paused)
 
 func _on_Quit_mouse_entered():
 	quit_label.add_color_override("font_color", BLACK)
