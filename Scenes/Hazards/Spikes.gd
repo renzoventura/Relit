@@ -35,20 +35,26 @@ func _on_Timer_timeout():
 
 func change_texture():
 	if is_light:
+#		sprite.texture = load(dark_spike_texture)
 		sprite.texture = load(light_spike_texture)
 		is_light = false
 	else:
 		sprite.texture = load(dark_spike_texture)
+#		sprite.texture = load(light_spike_texture)
 		is_light = true
 	change_mask_collision()
 
 func change_mask_collision():
 	if is_light:
-		static_body.set_collision_layer_bit(1, true)
-		static_body.set_collision_layer_bit(2, false)
-	else:
+#		static_body.set_collision_layer_bit(1, true)
+#		static_body.set_collision_layer_bit(2, false)
 		static_body.set_collision_layer_bit(1, false)
 		static_body.set_collision_layer_bit(2, true)
+	else:
+#		static_body.set_collision_layer_bit(1, false)
+#		static_body.set_collision_layer_bit(2, true)
+		static_body.set_collision_layer_bit(1, true)
+		static_body.set_collision_layer_bit(2, false)
 
 func _on_Area2D_body_entered(body):
 	if(body.name == "Player"):
