@@ -28,12 +28,12 @@ func _ready():
 
 func _process(delta):
 	apply_gravity()
+	animate()
 	if is_alive:
 		move()
 		jump()
 		toggle_form()
-	animate()
-	move_and_slide(motion,UP)
+		move_and_slide(motion,UP)
 
 func move():
 	if Input.is_action_pressed("left") and not Input.is_action_just_pressed("right"):

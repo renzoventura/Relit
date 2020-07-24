@@ -3,7 +3,7 @@
 [ext_resource path="res://assets/dark_tile.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 29.8597, 29.8112 )
+extents = Vector2( 29.5864, 29.6273 )
 
 [node name="DarkTiles" type="Node2D"]
 __meta__ = {

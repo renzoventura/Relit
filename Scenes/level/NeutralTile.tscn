@@ -3,7 +3,7 @@
 [ext_resource path="res://assets/gray_tile.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 29.9947, 29.9642 )
+extents = Vector2( 29.5864, 29.5248 )
 
 [node name="NeutralTile" type="Node2D"]
 

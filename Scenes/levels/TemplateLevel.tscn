@@ -70,3 +70,5 @@ visible = false
 pause_mode = 2
 stream = ExtResource( 9 )
 volume_db = 1.0
+
+[node name="Tween" type="Tween" parent="."]
