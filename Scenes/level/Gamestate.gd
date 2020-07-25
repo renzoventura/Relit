@@ -10,7 +10,6 @@ static func get_level(var index: int):
 	return load(str("res://Scenes/levels/", _order[index], ".tscn"))
 
 onready var backgroundMusic = $Music/AudioStreamPlayer
-onready var tween_out = get_node("Tween")
 
 
 func _ready():

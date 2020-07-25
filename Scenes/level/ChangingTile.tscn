@@ -29,6 +29,7 @@ visible = false
 shape = SubResource( 1 )
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
 autostart = true
 
 [node name="Area2D" type="Area2D" parent="."]
