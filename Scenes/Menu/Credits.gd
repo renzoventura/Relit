@@ -23,6 +23,7 @@ func _on_Back_gui_input(event):
 				self.add_child(t)
 				t.start()
 				yield(t, "timeout")
+				t.queue_free()
 				get_tree().change_scene_to(load(str("res://Scenes/Menu/MainMenu.tscn")))
 
 

@@ -47,10 +47,3 @@ var starting_volume = 0
 func play_music():
 	backgroundMusic.volume_db = starting_volume;
 	backgroundMusic.play();
-#	fade_in_music(backgroundMusic)
-	
-func fade_in_music(stream_player):
-	var transition_duration = 2
-	var transition_type = 4 # TRANS_SINE
-	tween_out.interpolate_property(stream_player, "volume_db", starting_volume, 0, transition_duration, transition_type, Tween.EASE_IN, 3)
-	tween_out.start()

@@ -6,10 +6,10 @@
 [ext_resource path="res://assets/sfx/death.wav" type="AudioStream" id=4]
 [ext_resource path="res://assets/sfx/change_form.wav" type="AudioStream" id=5]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 25.552, 21.0825 )
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 27.1216, 23.758 )
 
 [node name="Player" type="KinematicBody2D"]
@@ -21,7 +21,7 @@ script = ExtResource( 2 )
 collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Camera2D2" type="Camera2D" parent="."]
 position = Vector2( 0, -50 )
@@ -33,7 +33,7 @@ smoothing_speed = 6.0
 offset_v = -1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="PlayerAnimation" parent="." instance=ExtResource( 1 )]
 animation = "dark_idle"

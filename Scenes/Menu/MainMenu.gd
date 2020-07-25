@@ -32,18 +32,20 @@ func _on_StartGame_gui_input(event):
 			self.add_child(t)
 			t.start()
 			yield(t, "timeout")
+			t.queue_free()
 			get_tree().change_scene_to(load(str("res://Scenes/levels/Level0.tscn")))
 
 
 func _on_Credits_gui_input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == BUTTON_LEFT and event.pressed:
-				click.play()
-				var t = Timer.new()
-				t.set_wait_time(0.6)
-				t.set_one_shot(true)
-				self.add_child(t)
-				t.start()
-				yield(t, "timeout")
-				get_tree().change_scene_to(load(str("res://Scenes/Menu/Credits.tscn")))
+			click.play()
+			var t = Timer.new()
+			t.set_wait_time(0.6)
+			t.set_one_shot(true)
+			self.add_child(t)
+			t.start()
+			yield(t, "timeout")
+			t.queue_free()
+			get_tree().change_scene_to(load(str("res://Scenes/Menu/Credits.tscn")))
 
