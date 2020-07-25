@@ -16,8 +16,13 @@ _global_script_class_icons={
 [application]
 
 config/name="Relit"
-run/main_scene="res://Scenes/Menu/MainMenu.tscn"
+run/main_scene="res://Scenes/Menu/BaseScene.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+GlobalStreamPlayer="*res://Scenes/Global/GlobalStreamPlayer.gd"
+GlobalSoundEffectPlayer="*res://GlobalSoundEffectPlayer.gd"
 
 [display]
 

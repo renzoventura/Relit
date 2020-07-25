@@ -95,8 +95,6 @@ func animate():
 	if is_alive:
 		emit_signal("animate", motion, is_light)
 	else: 
-#		motion.x -= -motion.x * 2
-#		motion.y -= -motion.y * 2 
 		emit_signal("death_animate")
 	
 
