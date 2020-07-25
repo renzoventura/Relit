@@ -3,7 +3,7 @@ extends Node2D
 const _order = [
 	"Level0",
 	"Level1",
-#	"Level2",
+	"Level2",
 ]
 
 static func get_level(var index: int):
